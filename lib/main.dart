@@ -40,8 +40,7 @@ class MyHomePage extends StatelessWidget {
         title: const Text("Expenses App"),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start, //Flexbox eixo y
-        crossAxisAlignment: CrossAxisAlignment.center, //Flexbox eixo x
+        crossAxisAlignment: CrossAxisAlignment.stretch, //Flexbox eixo x
         children: [
           const SizedBox(
             width: double.infinity,
@@ -99,6 +98,33 @@ class MyHomePage extends StatelessWidget {
                 ),
               );
             }).toList(),
+          ),
+          Card(
+            elevation: 5,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  const TextField(
+                    decoration: InputDecoration(labelText: "Título da conta"),
+                  ),
+                  const TextField(
+                    decoration: InputDecoration(labelText: "Valor (R\$)"),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        style: TextButton.styleFrom(
+                            foregroundColor: Colors.purple),
+                        onPressed: () {},
+                        child: const Text("Nova Transação"),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           )
         ],
       ),
