@@ -17,7 +17,7 @@ class ExpensesApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
-  final transaction = [
+  final _transaction = [
     Transaction(
       id: "t1",
       title: "Tênis novo",
@@ -41,8 +41,8 @@ class MyHomePage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start, //Flexbox eixo y
         crossAxisAlignment: CrossAxisAlignment.center, //Flexbox eixo x
-        children: const [
-          SizedBox(
+        children: [
+          const SizedBox(
             width: double.infinity,
             child: Card(
               color: Colors.blue,
@@ -50,8 +50,39 @@ class MyHomePage extends StatelessWidget {
               child: Text("Gráfico"),
             ),
           ),
-          Card(
-            child: Text("Lista de Transações"),
+          Column(
+            children: _transaction.map((tr) {
+              return Card(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 10,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        tr.value.toString(),
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(tr.title.toString()),
+                        Text(tr.date.toString())
+                      ],
+                    )
+                  ],
+                ),
+              );
+            }).toList(),
           )
         ],
       ),
