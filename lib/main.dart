@@ -2,6 +2,8 @@ import 'package:expenses/components/transaction_list.dart';
 import 'package:flutter/material.dart';
 import 'package:expenses/models/transaction.dart';
 
+import 'components/transaction_form.dart';
+
 void main() => runApp(const ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
@@ -17,9 +19,6 @@ class ExpensesApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
-
-  final titleController = TextEditingController();
-  final valueController = TextEditingController();
 
   final _transaction = [
     Transaction(
@@ -54,39 +53,7 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           TransactionList(transaction: _transaction),
-          Card(
-            elevation: 5,
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: [
-                  TextField(
-                    controller: titleController,
-                    decoration:
-                        const InputDecoration(labelText: "Título da conta"),
-                  ),
-                  TextField(
-                    controller: valueController,
-                    decoration: const InputDecoration(labelText: "Valor (R\$)"),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        style: TextButton.styleFrom(
-                            foregroundColor: Colors.purple),
-                        onPressed: () {
-                          print(titleController.text);
-                          print(valueController.text);
-                        },
-                        child: const Text("Nova Transação"),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          )
+          TransactionForm(),
         ],
       ),
     );
