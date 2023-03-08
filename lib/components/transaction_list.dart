@@ -10,8 +10,10 @@ class TransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 500,
-      child: ListView(
-        children: transaction.map((tr) {
+      child: ListView.builder(
+        itemCount: transaction.length,
+        itemBuilder: (ctx, index) {
+          final tr = transaction[index];
           return Card(
             child: Row(
               children: [
@@ -57,7 +59,7 @@ class TransactionList extends StatelessWidget {
               ],
             ),
           );
-        }).toList(),
+        },
       ),
     );
   }
