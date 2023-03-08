@@ -26,6 +26,48 @@ class _TransactionState extends State<TransactionUser> {
       value: 60.00,
       date: DateTime.now(),
     ),
+    Transaction(
+      id: "t3",
+      title: "Engradado de Monster",
+      value: 60.00,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: "t4",
+      title: "Engradado de Monster",
+      value: 60.00,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: "t5",
+      title: "Engradado de Monster",
+      value: 60.00,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: "t6",
+      title: "Engradado de Monster",
+      value: 60.00,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: "t7",
+      title: "Engradado de Monster",
+      value: 60.00,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: "t8",
+      title: "Engradado de Monster",
+      value: 60.00,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: "t9",
+      title: "Engradado de Monster",
+      value: 60.00,
+      date: DateTime.now(),
+    ),
   ];
 
   _addTransaction(String title, double value) {
@@ -45,8 +87,8 @@ class _TransactionState extends State<TransactionUser> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TransactionList(transaction: _transaction),
         TransactionForm(_addTransaction),
+        TransactionList(transaction: _transaction),
       ],
     );
   }

@@ -17,27 +17,28 @@ class ExpensesApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Expenses App"),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch, //Flexbox eixo x
-        children: const [
-           SizedBox(
-            width: double.infinity,
-            child: Card(
-              color: Colors.blue,
-              elevation: 5,
-              child: Text("Gráfico"),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch, //Flexbox eixo x
+          children: const [
+            SizedBox(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                elevation: 5,
+                child: Text("Gráfico"),
+              ),
             ),
-          ),
-          // TransactionList(transaction: _transaction),
-          TransactionUser(),
-        ],
+            // TransactionList(transaction: _transaction),
+            TransactionUser(),
+          ],
+        ),
       ),
     );
   }
