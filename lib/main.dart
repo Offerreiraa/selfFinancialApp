@@ -46,31 +46,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _transaction = [
-    Transaction(
-      id: "t1",
-      title: "Tênis novo",
-      value: 350.00,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t2",
-      title: "Engradado de Monster",
-      value: 60.00,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t3",
-      title: "Engradado de Monster",
-      value: 60.00,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t4",
-      title: "Engradado de Monster",
-      value: 60.00,
-      date: DateTime.now(),
-    ),
+  final List<Transaction> _transaction = [
+    // Transaction(
+    //   id: "t1",
+    //   title: "Tênis novo",
+    //   value: 350.00,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: "t2",
+    //   title: "Engradado de Monster",
+    //   value: 60.00,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: "t3",
+    //   title: "Engradado de Monster",
+    //   value: 60.00,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: "t4",
+    //   title: "Engradado de Monster",
+    //   value: 60.00,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   _addTransaction(String title, double value) {
