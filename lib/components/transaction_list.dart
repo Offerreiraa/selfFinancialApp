@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
   const TransactionList({super.key, required this.transaction});
+
   final List<Transaction> transaction;
 
   @override
@@ -43,10 +44,7 @@ class TransactionList extends StatelessWidget {
                   children: [
                     Text(
                       tr.title.toString(),
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     Text(
                       DateFormat('d MMM y').format(tr.date!),
